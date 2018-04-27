@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
+
     <title>Crystal Collector</title>
 </head>
 
@@ -36,69 +39,90 @@
             </div>
         </div>
     </div>
+    <!-- width="300px" height="300px" -->
+    <!-- Game Box -->
+    <div class="container">
 
-    <!-- instructions -->
-    <div id="game" class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
+        <div id="gameIndex" class="card">
+            <div class="card-header">
+                <h3 class="card-title">I want kibbles! Pwetty Pwease
+                    <3 </h3>
             </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
+            <!-- <div class="row"> -->
+            <div class="card align-center mx-auto" style="width: 12rem;">
+                <img id="imgWinLoss" class="card-img-top"  src="http://via.placeholder.com/150x150" alt="Card image cap">
             </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
+        <!-- </div> -->
+            <div class="card-body text-center">
+                <h1 id="computer-pick">???</h1>
             </div>
         </div>
-    </div>
 
-    <!-- instructions -->
-    <footer id="instructions" class="container mt-5">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Instructions</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Select container with random kibble to feed kitty.</h4>
+
+                <!-- Game Buttons -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 12rem;">
+                            <img id="button-1" class="card-img-top btn-choice" src="http://via.placeholder.com/150x150" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 12rem;">
+                            <img id="button-2" class="card-img-top btn-choice" src="http://via.placeholder.com/150x150" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 12rem;">
+                            <img id="button-3" class="card-img-top btn-choice" src="http://via.placeholder.com/150x150" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card" style="width: 12rem;">
+                            <img id="button-4" class="card-img-top btn-choice" src="http://via.placeholder.com/150x150" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <p class="lead mx-auto pt-3">
-                <a class="btn btn-primary btn-md" href="#game" role="button">To Game</a>
-            </p>
-        </div>
-    </footer>
 
+            <!-- instructions -->
+            <footer id="instructions" class="container mt-5">
+                <div class="card" style="width: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Instructions</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="lead mx-auto pt-3">
+                        <a class="btn btn-primary btn-md" href="#gameIndex" role="button">To Game</a>
+                    </p>
+                </div>
+            </footer>
+        </div>
 </body>
 
 </html>

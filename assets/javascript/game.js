@@ -67,7 +67,7 @@ $(document).ready(function () {
     $("body").on("click", ".btn-choice", function () {
 
         console.log(this.id);
-
+        // update user pick() += 
 
 
 
@@ -77,12 +77,12 @@ $(document).ready(function () {
 
 
 
-
-
     function gameReset() {
         var goalKibbles = 0;
         var currKibbles = 0;
 
+        goalKibbles = Math.floor(Math.random() * 100) + 19;
+        // console.log(goalKibbles);
         getKibbleBtns();
     };
 
@@ -90,19 +90,12 @@ $(document).ready(function () {
         var isGoalOdd = false;
         var isKibbleBtnsOdd = false;
         var isSmallestValue = 9999; //Setting a value far above 0;
-        goalKibbles = Math.floor(Math.random() * 100) + 19;
-        // console.log(goalKibbles);
-
-        // console.log(isOdd);
-
-        //TODO add random numbers for buttons.
 
         for (var i = 0; i <= 3; i++) {
             kibblesBtnArray.push(Math.floor(Math.random() * 12) + 1);
         }
-        kibblesBtnArray = [2, 4, 6, 8];
+        // kibblesBtnArray = [2, 4, 6, 8]; //Used for debugging.
         console.log(kibblesBtnArray);
-
 
         //if goal is odd, check if all buttons are even. if TRUE then + 1 to smallest button.      
         isGoalOdd = (goalKibbles % 2 !== 0); //give isGoalOdd = true if goalKibble is odd.
@@ -125,8 +118,11 @@ $(document).ready(function () {
         }
         // console.log(kibblesBtnArray);
 
-
         //TODO assign array variables to each button.
+        kibblesBtn1.val(kibblesBtnArray[0]);
+        kibblesBtn2.val(kibblesBtnArray[1]);
+        kibblesBtn3.val(kibblesBtnArray[2]);
+        kibblesBtn4.val(kibblesBtnArray[3]);
     };
 
 

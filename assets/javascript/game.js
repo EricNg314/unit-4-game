@@ -60,7 +60,9 @@ $(document).ready(function () {
     // var kibblesBtn3 = $("#button-3");
     // var kibblesBtn4 = $("#button-4");
     var catStatusImgArray = ["assets/images/cat_hungry.jpg", "assets/images/cat_unhappy.jpg", "assets/images/cat_happy.jpg"];
+    var catStatusImgAltArray = ["A hungry cat begging", "Grumpy cat is mad", "Smiling cat"];
     var catStatusImg = catStatusImgArray[0]; //initializing.
+    var catStatusImgAlt = catStatusImgAltArray[0]; //initializing.
 
     //========= Initialization Part 2 ====================================================//
     gameReset();
@@ -77,10 +79,12 @@ $(document).ready(function () {
         if (currKibbles === goalKibbles) {
             scoreWins++;
             catStatusImg = catStatusImgArray[2];
+            catStatusImgAlt = catStatusImgAltArray[2];
             gameReset();
         } else if (currKibbles > goalKibbles) {
             scoreLoss++;
             catStatusImg = catStatusImgArray[1];
+            catStatusImgAlt = catStatusImgAltArray[1];
             gameReset();
         }
 
@@ -152,6 +156,7 @@ $(document).ready(function () {
         var htmlGoalKibble = goalKibbles;
         var htmlCurrKibble = currKibbles;
         $("#imgWinLoss").attr('src', catStatusImg);
+        $("#imgWinLoss").attr('alt', catStatusImgAlt);
         $("#winKitty").text(scoreWins);
         $("#lossKitty").text(scoreLoss);
         $("#computer-pick").text(htmlGoalKibble);

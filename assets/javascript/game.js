@@ -95,8 +95,6 @@ $(document).ready(function () {
 
         getKibbleBtns();
         getGoalKibbles();
-        console.log("goal kibbles: " + goalKibbles);
-
     };
 
     function getKibbleBtns() {
@@ -109,7 +107,7 @@ $(document).ready(function () {
         for (var i = 0; i <= 3; i++) {
             kibblesBtnArray.push(Math.floor(Math.random() * 12) + 1);
         }
-        console.log(kibblesBtnArray);
+        // console.log(kibblesBtnArray);
 
         //if goal is odd, check if all buttons are even. if TRUE then + 1 to smallest button.      
         // isGoalOdd = (goalKibbles % 2 !== 0); //give isGoalOdd = true if goalKibble is odd.

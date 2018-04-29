@@ -148,7 +148,7 @@ $(document).ready(function () {
             for (var i = 0; i < kibblesBtnArray.length; i++) {
                 goalKibbles += kibblesBtnArray[i] * Math.floor(Math.random() * 5);
             }
-        } while (goalKibbles <= 19 && goalKibbles >= 120);
+        } while (goalKibbles <= 19 || goalKibbles >= 120);
     }
 
 

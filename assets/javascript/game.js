@@ -93,7 +93,6 @@ $(document).ready(function () {
         goalKibbles = 0;
         currKibbles = 0;
 
-        // console.log(goalKibbles);
         getKibbleBtns();
         getGoalKibbles();
         console.log("goal kibbles: " + goalKibbles);
@@ -101,36 +100,36 @@ $(document).ready(function () {
     };
 
     function getKibbleBtns() {
-        var isGoalOdd = false;
-        var isKibbleBtnsOdd = false;
-        var isSmallestValue = 9999; //Setting a value far above 0;
+        //====the commented information in this function should only be applied if goal is set prior to button values.====//
+        // var isGoalOdd = false; 
+        // var isKibbleBtnsOdd = false;
+        // var isSmallestValue = 9999; //Setting a value far above 0;
         kibblesBtnArray.length = 0; //resetting for new games.
 
         for (var i = 0; i <= 3; i++) {
             kibblesBtnArray.push(Math.floor(Math.random() * 12) + 1);
         }
-        // kibblesBtnArray = [2, 4, 6, 8]; //Used for debugging.
         console.log(kibblesBtnArray);
 
         //if goal is odd, check if all buttons are even. if TRUE then + 1 to smallest button.      
-        isGoalOdd = (goalKibbles % 2 !== 0); //give isGoalOdd = true if goalKibble is odd.
-        isSmallestValue = Math.min(...kibblesBtnArray);
-        if (isGoalOdd === true) {
-            for (var i = 0; i <= 3; i++) {
-                isKibbleBtnsOdd = kibblesBtnArray[i] % 2 !== 0; //give isKibbleBtnsOdd = true if goalKibble is odd.
-                if (isKibbleBtnsOdd === true) {
-                    break;
-                }
-            }
-            if (isKibbleBtnsOdd === false) { //if there's no odd, then goal is unsolvable. Make the lowest even value odd.
-                for (var i = 0; i <= 3; i++) {
-                    if (isSmallestValue === kibblesBtnArray[i]) {
-                        kibblesBtnArray[i] += 1;
-                        break;
-                    }
-                }
-            }
-        }
+        // isGoalOdd = (goalKibbles % 2 !== 0); //give isGoalOdd = true if goalKibble is odd.
+        // isSmallestValue = Math.min(...kibblesBtnArray);
+        // if (isGoalOdd === true) {
+        //     for (var i = 0; i <= 3; i++) {
+        //         isKibbleBtnsOdd = kibblesBtnArray[i] % 2 !== 0; //give isKibbleBtnsOdd = true if goalKibble is odd.
+        //         if (isKibbleBtnsOdd === true) {
+        //             break;
+        //         }
+        //     }
+        //     if (isKibbleBtnsOdd === false) { //if there's no odd, then goal is unsolvable. Make the lowest even value odd.
+        //         for (var i = 0; i <= 3; i++) {
+        //             if (isSmallestValue === kibblesBtnArray[i]) {
+        //                 kibblesBtnArray[i] += 1;
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
         // console.log(kibblesBtnArray);
 
         //TODO assign array variables to each button.
@@ -154,12 +153,11 @@ $(document).ready(function () {
     function outputDisplay() {
         var htmlGoalKibble = goalKibbles;
         var htmlCurrKibble = currKibbles;
-        var htmlCatStatusImg = $("#imgWinLoss").attr('src', catStatusImg)
-
-        document.querySelector("#winKitty").innerHTML = scoreWins;
-        document.querySelector("#lossKitty").innerHTML = scoreLoss;
-        document.querySelector("#computer-pick").innerHTML = htmlGoalKibble;
-        document.querySelector("#user-pick").innerHTML = htmlCurrKibble;
+        $("#imgWinLoss").attr('src', catStatusImg);
+        $("#winKitty").text(scoreWins);
+        $("#lossKitty").text(scoreLoss);
+        $("#computer-pick").text(htmlGoalKibble);
+        $("#user-pick").text(htmlCurrKibble);
     }
 
 });

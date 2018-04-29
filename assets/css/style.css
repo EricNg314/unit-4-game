@@ -12,6 +12,7 @@ body{
     background-image: url("../images/nyancat_jumbotron.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    padding: 2rem 2rem;
     display:flex;
     /* height: inherit; */
     /* background-color: #17234E; */
@@ -22,12 +23,14 @@ body{
 }
 
 #jumbotronTxt {
-    color: rgb(245,245,220,.85);
+    color: rgb(245,245,220);
     font-weight: bold;
     font-family: 'Press Start 2P', cursive;
 }
 
-
+#helpBtn {
+    background-color: rgba(0, 255, 255,.85);
+}
 #instructionID {
     border-bottom: 3px solid lightgrey;
 }

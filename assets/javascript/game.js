@@ -156,6 +156,8 @@ $(document).ready(function () {
         var htmlCurrKibble = currKibbles;
         var htmlCatStatusImg = $("#imgWinLoss").attr('src', catStatusImg)
 
+        document.querySelector("#winKitty").innerHTML = scoreWins;
+        document.querySelector("#lossKitty").innerHTML = scoreLoss;
         document.querySelector("#computer-pick").innerHTML = htmlGoalKibble;
         document.querySelector("#user-pick").innerHTML = htmlCurrKibble;
     }

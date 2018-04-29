@@ -1,3 +1,37 @@
+
+body{
+    font-family: 'Coustard', serif;
+}
+
 .card{
     background:rgba(255,255,255,0.5);
+}
+
+
+#jumbotronID {
+    background-image: url("../images/nyancat_jumbotron.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display:flex;
+    /* height: inherit; */
+    /* background-color: #17234E; */
+
+    /* background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover; */
+}
+
+#jumbotronTxt {
+    color: rgb(245,245,220,.85);
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+#instructionID {
+    border-bottom: 3px solid lightgrey;
+}
+
+#videoID {
+    display:block;
 }

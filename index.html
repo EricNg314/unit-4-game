@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css?family=Coustard|Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="assets/javascript/game.js"></script>
 
-    <title>Crystal Collector</title>
+    <title>Kibble Collector</title>
 </head>
 
 <body background="assets/images/footprints-309158_1280.png">
@@ -31,9 +32,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 
-    <div class="jumbotron jumbotron-fluid">
+    <header id="jumbotronID" class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4 text-center">Kibble Collector!</h1>
+            <!-- <img src="assets/images/nyancat_jumbotron.jpg"> -->
+            <h1 id="jumbotronTxt" class="display-4 text-center">Kibble Collector!</h1>
             <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
             <div class="row">
                 <p class="lead mx-auto pt-3">
@@ -41,94 +43,98 @@
                 </p>
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- width="300px" height="300px" -->
     <!-- Game Box -->
     <div class="container">
 
-        <div id="gameIndex" class="card">
+        <section id="gameIndex" class="card">
             <div class="card-header">
                 <h3 class="card-title">I want kibbles! Pwetty Pwease
                     <3 </h3>
             </div>
-            <!-- <div class="row"> -->
-            <div class="card align-center mx-auto" style="width: 12rem;">
-                <img id="imgWinLoss" class="card-img-top" src="" alt="Card image cap">
+
+            <div class="container">
+                <div class="card-body float-left">
+                    <h5 class="card-title">Scores</h5>
+                    <h6 class="card-subtitle mb-0 text-muted">Fed: </h6>
+                    <p id="winKitty" class="mr-2"></p>
+                    <h6 class="card-subtitle mb-0 text-muted">Scratched: </h6>
+                    <p id="lossKitty" class="mr-2"></p>
+                </div>
+
+                <div class="align-center mx-auto" style="width: 12rem;">
+                    <img id="imgWinLoss" class="card-img-top " src="" alt="Card image cap">
+                </div>
             </div>
-            <!-- </div> -->
             <div class="card-body text-center">
                 <h1 id="computer-pick">???</h1>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
+        <section class="card">
             <div class="card-header">
-                <h4 class="card-title">Select container with random kibble to feed kitty.</h4>
+                <h4 class="card-title">Select random kibble to feed kitty.</h4>
                 <div class="card-body text-center">
                     <h1 id="user-pick">0</h1>
                 </div>
                 <!-- Game Buttons -->
-                <div class="row mx-auto">
-                    <!-- <div class="col-md-3"> -->
-                        <div class="card mx-auto" style="width: 12rem;">
-                            <img id="button-1" class="card-img-top btn-choice " src="assets/images/kibbleImg1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Ooo Drumstick</h5>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    <!-- </div> -->
-                    <!-- <div class="col-md-3"> -->
-                        <div class="card mx-auto" style="width: 12rem;">
-                            <img id="button-2" class="card-img-top btn-choice" src="assets/images/kibbleImg2_copy.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Itty Bitty Treats</h5>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    <!-- </div> -->
-                    <!-- <div class="col-md-3"> -->
-                        <div class="card mx-auto" style="width: 12rem;">
-                            <img id="button-3" class="card-img-top btn-choice" src="assets/images/kibbleImg3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Sharp Flavors</h5>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    <!-- </div> -->
-                    <!-- <div class="col-md-3"> -->
-                        <div class="card mx-auto" style="width: 12rem;">
-                            <img id="button-4" class="card-img-top btn-choice" src="assets/images/kibbleImg4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">OMG Huge</h5>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    <!-- </div> -->
-                <!-- </div> -->
-            </div>
+                <article class="row mx-auto">
+                    <figure class="card mx-auto" style="width: 12rem;">
+                        <img id="button-1" class="card-img-top btn-choice " src="assets/images/kibbleImg1.jpg" alt="Card image cap">
+                        <figcaption class="card-body">
+                            <h5 class="card-title">Ooo Drumstick</h5>
+                        </figcaption>
+                    </figure>
+                    <figure class="card mx-auto" style="width: 12rem;">
+                        <img id="button-2" class="card-img-top btn-choice" src="assets/images/kibbleImg2_copy.jpg" alt="Card image cap">
+                        <figcaption class="card-body">
+                            <h5 class="card-title">Itty Bitty Treats</h5>
+                        </figcaption>
+                    </figure>
+                    <figure class="card mx-auto" style="width: 12rem;">
+                        <img id="button-3" class="card-img-top btn-choice" src="assets/images/kibbleImg3.jpg" alt="Card image cap">
+                        <figcaption class="card-body">
+                            <h5 class="card-title">Sharp Flavors</h5>
+                        </figcaption>
+                    </figure>
+                    <figure class="card mx-auto" style="width: 12rem;">
+                        <img id="button-4" class="card-img-top btn-choice" src="assets/images/kibbleImg4.jpg" alt="Card image cap">
+                        <figcaption class="card-body">
+                            <h5 class="card-title">OMG Huge</h5>
+                        </figcaption>
+                    </figure>
+                </article>
 
-            <!-- instructions -->
-            <footer id="instructions" class="container mt-5">
-                <div class="card" style="width: 12rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Instructions</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="lead mx-auto pt-3">
-                        <a class="btn btn-primary btn-md" href="#gameIndex" role="button">To Game</a>
-                    </p>
-                </div>
-            </footer>
-        </div>
+                <!-- instructions -->
+                <article class="row mx-auto">
+                    <figure id="instructions" class="container mt-5">
+                        <div class="card w-auto" style="width: 12rem;">
+                            <figcaption class="card-body">
+                                <h5 id="instructionID" class="card-title">Instructions</h5>
+                                <h6 class="card-subtitle mb-2 text-muted"></h6>
+
+                                <div class="card-body">
+                                    <iframe class="float-left mr-2" width="315" height="177" src="https://www.youtube.com/embed/QH2-TGUlwu4?autoplay=1&loop=1&playlist=QH2-TGUlwu4"
+                                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                                    <p class="card-text">Feed the cat by clicking on the kibble images.</p>
+                                    <p class="card-text">Becareful these cats HATE to overeat. </p>
+                                    <p>They are very picky and they want an exact number of treats or they will get mad.</p>
+                                </div>
+
+                            </figcaption>
+                        </div>
+                        <div class="row">
+                            <p class="lead mx-auto pt-3">
+                                <a class="btn btn-primary btn-md" href="#gameIndex" role="button">Back To Game</a>
+                            </p>
+                        </div>
+                    </figure>
+                </article>
+            </div>
+        </section>
 </body>
 
 </html>

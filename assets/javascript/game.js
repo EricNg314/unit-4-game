@@ -65,8 +65,19 @@ $(document).ready(function () {
     var catStatusImgAlt = catStatusImgAltArray[0]; //initializing.
 
     //========= Initialization Part 2 ====================================================//
+    play_initial_sound();
     gameReset();
     outputDisplay()
+
+    $("#helpBtn").click(function () {
+        console.log("working");
+        $('html, body').animate({
+            scrollTop: $("#instructions").offset().top
+        }, 1000);
+    });
+
+
+
 
     //========== Clicking Event ===================================================//
     $("body").on("click", ".btn-choice", function () {
@@ -80,11 +91,13 @@ $(document).ready(function () {
             scoreWins++;
             catStatusImg = catStatusImgArray[2];
             catStatusImgAlt = catStatusImgAltArray[2];
+            play_win_sound();
             gameReset();
         } else if (currKibbles > goalKibbles) {
             scoreLoss++;
             catStatusImg = catStatusImgArray[1];
             catStatusImgAlt = catStatusImgAltArray[1];
+            play_lose_sound()
             gameReset();
         }
 
@@ -96,7 +109,6 @@ $(document).ready(function () {
     function gameReset() {
         goalKibbles = 0;
         currKibbles = 0;
-
         getKibbleBtns();
         getGoalKibbles();
     };
@@ -161,6 +173,15 @@ $(document).ready(function () {
         $("#lossKitty").text(scoreLoss);
         $("#computer-pick").text(htmlGoalKibble);
         $("#user-pick").text(htmlCurrKibble);
+    }
+    function play_initial_sound() {
+        document.getElementById('audioTagInitial').play();
+    }
+    function play_win_sound() {
+        document.getElementById('audioTagWin').play();
+    }
+    function play_lose_sound() {
+        document.getElementById('audioTagLose').play();
     }
 
 });

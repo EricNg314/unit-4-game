@@ -18,9 +18,11 @@ Example of a jQuery created in a javascript file.
   - Clearing array
 - Output to an html document with specified ID using jQuery
 - Creating and calling functions
+- Application of animate.css (https://github.com/daneden/animate.css)
 
 ### CSS examples:
 - Applying online fonts.
+- Transparent backgrounds.
 - Bootstrap styling for images, buttons, containers, and rows.
 
 ## Built With

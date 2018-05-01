@@ -82,7 +82,29 @@ $(document).ready(function () {
     //========== Clicking Event ===================================================//
     $("body").on("click", ".btn-choice", function () {
 
-        console.log(this.id);
+        //=======Animation ending detection BEGIN========/
+        var animationEnd = (function (el) {
+            var animations = {
+                animation: 'animationend',
+                OAnimation: 'oAnimationEnd',
+                MozAnimation: 'mozAnimationEnd',
+                WebkitAnimation: 'webkitAnimationEnd',
+            };
+
+            for (var t in animations) {
+                if (el.style[t] !== undefined) {
+                    return animations[t];
+                }
+            }
+        })(document.createElement('div'));
+        //=======Animation ending detection END========/
+
+        //======Adding animation to element ========/
+        $("#" + this.id).addClass('animated bounce').one(animationEnd, function () {
+            $("#" + this.id).removeClass('animated bounce'); //Removing animation class to reset
+        });
+
+
         currKibbles += parseInt(this.value);
         catStatusImg = catStatusImgArray[0];
 
@@ -114,7 +136,7 @@ $(document).ready(function () {
     };
 
     function getKibbleBtns() {
-        //====the commented information in this function should only be applied if goal is set prior to button values.====//
+        //=========The commented information in this function should only be applied if goal is set prior to button values.=========//
         // var isGoalOdd = false; 
         // var isKibbleBtnsOdd = false;
         // var isSmallestValue = 9999; //Setting a value far above 0;
